@@ -1,172 +1,80 @@
-# Anatomia de Classes
+# Java Documentation
 
-Meu resumo sobre a aula de [Anatomia de Classes](https://felipe-aguiar.gitbook.io/dio-java/gitbook/sintaxe/anatomia-das-classes).
+Meu resumo sobre a aula de [Java Docs](https://felipe-aguiar.gitbook.io/dio-java/gitbook/sintaxe/documentacao).
 
+Uma das grandes vantagens da linguagem Java é sua documentação oficial, completa e bem estruturada desde as primeiras versões. Ela permite que programadores explorem todos os recursos da linguagem organizados por **pacotes**, **classes** e **métodos**, mesmo sem precisar escrever uma linha de código.
 
-- **99,9%** das nossas classes iniciarão com `public class`;
-- Toda classe precisa de nome, exemplo `MinhaClasse`;
-- O nome do arquivo deve ser idêntico ao nome da classe pública;
-- Após o nome, definir o corpo `{ }` , onde iremos compor nossas classes com atributos e métodos.
+Segundo o site oficial, dominar essa documentação é essencial para o crescimento na área. Por isso, **entender e saber consultar a documentação da linguagem e dos frameworks utilizados nos projetos** é considerado um requisito fundamental para quem deseja se tornar um desenvolvedor de nível avançado.
 
-<img align="center" alt="Exemplo de anatomia" height="200" width="500" src="https://felipe-aguiar.gitbook.io/~gitbook/image?url=https%3A%2F%2F2590158637-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F2qZwrhEqcOsERZF1L25d%252Fuploads%252Fgit-blob-04c8f2a4b8867634496c5c0183c1553190605aa6%252Fimage%2520%2812%29%2520%281%29%2520%281%29%2520%281%29%2520%281%29.png%3Falt%3Dmedia&width=768&dpr=4&quality=100&sign=fa04a580&sv=2">
+Abaixo, temos o link da documentação de uma das principais classes da linguagem Java:
 
-- É de suma importância que agora você consiga se localizar dentro do conjunto de chaves `{ }` existentes em sua classe.
+👉 [Documentação da classe String – Oracle](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
 
-- **Recomenda-se que somente uma classe possua o método** `main`, responsável por iniciar todo o nosso programa.
+## Tags
+A documentação das classes em Java fornece uma visão completa sobre o propósito, funcionamento e estrutura de cada classe, incluindo seus métodos, atributos, construtores e comportamentos esperados.
 
-- O método `main` recebe seu nome `main`, sempre terá a visibilidade `public`, será difinido como `static`, não retornará nenhum valor com `void` e receberá um parâmetro do tipo array de caracteres `String[]`.
+A **Java Documentation (JavaDoc)** utiliza *tags* específicas para organizar essas informações de forma padronizada, facilitando o entendimento por parte dos desenvolvedores. Através dessa documentação, é possível obter:
 
-## Padrão de nomenclatura
+- **Descrição da classe**: o que ela faz e qual seu propósito.
+- **Construtores**: como instanciar objetos da classe.
+- **Métodos**: o que cada método faz, seus parâmetros e o valor retornado.
+- **Atributos (ou campos)**: variáveis associadas à classe.
+- **Exceções**: quais erros podem ser lançados e quando.
+- **Relacionamentos**: heranças, interfaces implementadas e classes relacionadas.
 
-- **Arquivo .java**: Todo arquivo .java deve começar com letra MAIÚSCULA. Se a palavra for composta, a segunda palavra deve também ser maiúscula, exemplo:
+Abaixo, uma tabela com algumas das principais tags utilizadas no JavaDoc:
 
-`Calculadora.java`, `CalculadoraCientifica.java`
+| **Tag**         | **Descrição**                                                                 |
+|------------------|--------------------------------------------------------------------------------|
+| `@author`        | Informa o autor da classe ou método.                                           |
+| `@version`       | Especifica a versão do código.                                                 |
+| `@param`         | Descreve os parâmetros de entrada de um método.                               |
+| `@return`        | Indica o valor retornado por um método.                                        |
+| `@throws` / `@exception` | Indica quais exceções podem ser lançadas por um método.           |
+| `@see`           | Aponta para classes ou métodos relacionados.                                  |
+| `@since`         | Indica a versão da linguagem em que o recurso foi introduzido.                |
+| `@deprecated`    | Indica que a classe ou método não deve mais ser usado.                        |
 
-- **Nome da classe no arquivo**: A classe deve possuir o mesmo nome do arquivo.java, exemplo:
+Com a prática, saber ler e interpretar essa documentação se torna uma ferramenta poderosa no desenvolvimento em Java.
+
+## Tipos de comentários
+
+| **One Line** | **Mult Line** | Documentation | 
+| --- | --- | --- |
+| `// Olá, eu sou um comentário em uma única linha` | /* Olá, <br/> * Eu sou um comentario <br/> * que posso ser mais detalhado <br/> * quando necessário <br/> */ | /** <br/> * Estas duas estrelinhas acima <br/> * é para identificar que você <br/> * pretende elaborar um comentário <br/> * a nível de documentação. <br/> * Que incrível !!! <br/> */
+
+> [!WARNING]
+> Um comentário não possui a finalidade de **amenizar** um algoritmo não estruturado conforme as convenções da linguagem.
 
 ```java
-// arquivo CalculadoraCientifica.java
-
-public class CalculadoraCientifica {
-
+/*
+ * Este método foi elaborado as pressas
+ * por isso eu abrevei o nome das variáveis
+ * mas olha, ele tem a finalidade somar ou  multiplicar
+ * dois números
+ */
+public int somaMultiplica (int n, int x, String m){
+    int r = 0; // r é igual ao resultado
+    if (m == "M"){ // M= multiplicação
+        r= n * x;
+    }else{
+        // se não soma mesmo
+        r = n + x;
+    }
+    return r;
 }
 ```
 
-- **Nome de variável**: sempre em letra minúscula, a não ser que seja composta > camelCase.
+## JavaDoc
+Javadoc é um gerador de documentação criado pela [Sun Microsystems](https://pt.wikipedia.org/wiki/Sun_Microsystems) para documentar a [API](https://pt.wikipedia.org/wiki/API) dos programas em [Java](https://pt.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o_Java), a partir do [código-fonte](https://pt.wikipedia.org/wiki/C%C3%B3digo-fonte). O resultado é expresso em [HTML](https://pt.wikipedia.org/wiki/HTML). É constituído, basicamente, por algumas marcações muitos simples inseridas nos comentários do programa.
 
+Este sistema é o padrão de documentação de classes em Java, e muitas dos [IDEs](https://pt.wikipedia.org/wiki/Ambiente_de_desenvolvimento_integrado) desta linguagem irão automaticamente gerar um Javadoc em [HTML](https://pt.wikipedia.org/wiki/HTML).
+
+Criando nossa documentação no formato html para disponibilizar via web.
 ```java
-// Ex de variável final:
-    String Br = "Brasil"
-    double PI = 3.14
-    int ESTADOS_BRASILEIRO = 27
-    int ANO_2000 = 2000
-```
-> [!IMPORTANT]
-> **Para declarar uma variável nós podemos utilizar caracteres, números e símbolos, porém devemos seguir algumas regras da linguagem**.
-
-- Deve conter apenas letras, _ (underline), $ ou os números de 0 a 9;
-- Deve obrigatoriamente se iniciar por uma letra (preferencialmente), _ ou $, jamais com número;
-- Deve iniciar com uma letra minúscula (boa prática – ver abaixo);
-- Não pode conter espaços;
-- Não podemos usar palavras-chave da linguagem;
-- O nome deve ser único dentro de um escopo
-
-```java
-// Declação inválida de variáveis
-
-int numero&um = 1; //Os únicos símbolos permitidos são _ e $
-int 1numero = 1;    //Uma variável não pode começar com númerico
-int numero um = 1; //Não pode ter espaço no nome da variável
-int long = 1; //long faz parte das palavras reservadas da linguagem
- 
-// Declaração válida de veriáveis
-
-int numero$um = 1;
-int numero1 = 1;
-int numeroum = 1;
-int longo = 1;
+// No terminal execute o comando abaixo
+javadoc -encoding UTF-8 -docencoding ISO-8859-1  -d ../docs  src/*.java
 ```
 
-- ***Declarar uma variável em Java segue sempre a seguinte estrutura***:
-
-```java
-// Estrutura
-
-Tipo NomeBemDefinido = Atribuição (opcional em alguns casos)
-
-// Exemplo
-
-int idade = 23;
-double altura = 1.62;
-Dog spike; //observe que aqui a variável spike não tem valor, é normal
-
-// ex2
-public class MinhaClasse {
-				    
-	public static void main (String [] args) {
-				
-		String meuNome = "Beatriz";				
-		int anoFarbicacao = 2022;				
-		boolean verdadeira = true;				
-		anoFarbicacao = 2018;
-	}
-}
-```
-
-## Java Beans
-
-A linguagem Java sugere, através de convenções, formas de escrita universal para nossas classes, atributos, métodos e pacotes.
-
-### Variáveis
-
-Mais cedo já aprendemos algumas regras de declaração de variáveis, mas agora iremos conhecer algumas sugestões de de nomenclatura:
-
-- Uma variável deve ser clara, sem abreviações ou definição sem sentido;
-- Uma variável é sempre no singular, **exceto quando se referir a um array ou coleção**.
-- Defina um idioma único para suas variáveis. Se você for declarar variáveis em inglês, defina todas em inglês.
-
-#### Não recomendado
-
-```java
-double salMedio = 1500.23  //variável abreviada, o que dificulta a compreensão
-String emails = "aluno@escola.com" //confuso se a variável seria um array ou único e-mail
-String myName = "JOSEPH" //se idioma pt-BR, o valor poder ser de outro idioma mas o nome da variável não 
-```
-
-#### Recomendado
-
-```java
-double salarioMedio=1500.23;
-String email ="aluno@escola.com";
-String [] emails = {"aluno@escola.com","professor@escola.com"}
-String meuNome = "JOSEPH" 
-```
-
-### Métodos
-
-Os métodos deverão ser nomeados como verbos, através de uma mistura de letras minúsculas e maiúsculas. Em princípio todas as letras que compõem o nome devem ser mantidas em minúsculo, com exceção da primeira letra de cada palavra composta a partir da segunda palavra.
-
-```java
-somar(int n1, int n2){}
-abrirConexao(){}
-concluirProcessamento() {}
-findById(int id){} // não se assuste, você verá muito método em inglês em sua jornada
-calcularImprimir(){} // há algo de errado neste método, ele deveria ter uma única finalidade
-```
-
-```java
-//EX
-public class MinhaClasse {
-				    
-	public static void main (String [] args) {
-				       
-		String primeiroNome = "Beatriz";
-		String segundoNome = "Bernardes";
-		String nomeCompleto = nomeCompleto(primeiroNome, segundoNome);
-			 System.out.println(nomeCompleto);
-	}
-	public static String nomeCompleto (String primeiroNome, String segundoNome){
-				   
-	return "Resultado do Método: " + primeiroNome.concat(" ").concat(segundoNome);
-	}
-}
-```
-
-#### Características dos métodos 
-
-- São funções definidas em uma **classe**;
-- Descrevem os comportamentos ou as ações que os objetos da classe podem executar;
-- Podem manipular dados de objetos, executar operações e retornar resultados;
-- São executados somente quando são chamados;
-- Cada método tem seu nome;
-- Você pode passar dados para um método por meio de parâmetros;
-
-##### Como chamar um método 
-- Use o nome do método seguido por *parênteses* para chamá-lo;
-- Por exemplo, chamamos o método cumprimentar() dentro do método main();
-
-##### Tipos de métodos
-- Métodos sem retorno, identificados com a palavra-chave `void`; 
-- Métodos `protected`, que podem ser chamados por todas as classes que compõe um `package`; 
-- Métodos `friendly`, que podem ser usados dentro da classe que o contém, assim como dentro de qualquer classe que tenha sido derivada dessa classe;
+[Resultado](https://github.com/beaasb/Sintaxe-Java/blob/main/java-doc/docs/index.html)
 
