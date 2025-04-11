@@ -1,172 +1,104 @@
-# Anatomia de Classes
+# Terminal e Argumentos
 
-Meu resumo sobre a aula de [Anatomia de Classes](https://felipe-aguiar.gitbook.io/dio-java/gitbook/sintaxe/anatomia-das-classes).
+Meu resumo sobre a aula de [Terminal e Argumentos](https://felipe-aguiar.gitbook.io/dio-java/gitbook/sintaxe/terminal-e-argumentos).
 
-
-- **99,9%** das nossas classes iniciarão com `public class`;
-- Toda classe precisa de nome, exemplo `MinhaClasse`;
-- O nome do arquivo deve ser idêntico ao nome da classe pública;
-- Após o nome, definir o corpo `{ }` , onde iremos compor nossas classes com atributos e métodos.
-
-<img align="center" alt="Exemplo de anatomia" height="200" width="500" src="https://felipe-aguiar.gitbook.io/~gitbook/image?url=https%3A%2F%2F2590158637-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F2qZwrhEqcOsERZF1L25d%252Fuploads%252Fgit-blob-04c8f2a4b8867634496c5c0183c1553190605aa6%252Fimage%2520%2812%29%2520%281%29%2520%281%29%2520%281%29%2520%281%29.png%3Falt%3Dmedia&width=768&dpr=4&quality=100&sign=fa04a580&sv=2">
-
-- É de suma importância que agora você consiga se localizar dentro do conjunto de chaves `{ }` existentes em sua classe.
-
-- **Recomenda-se que somente uma classe possua o método** `main`, responsável por iniciar todo o nosso programa.
-
-- O método `main` recebe seu nome `main`, sempre terá a visibilidade `public`, será difinido como `static`, não retornará nenhum valor com `void` e receberá um parâmetro do tipo array de caracteres `String[]`.
-
-## Padrão de nomenclatura
-
-- **Arquivo .java**: Todo arquivo .java deve começar com letra MAIÚSCULA. Se a palavra for composta, a segunda palavra deve também ser maiúscula, exemplo:
-
-`Calculadora.java`, `CalculadoraCientifica.java`
-
-- **Nome da classe no arquivo**: A classe deve possuir o mesmo nome do arquivo.java, exemplo:
-
-```java
-// arquivo CalculadoraCientifica.java
-
-public class CalculadoraCientifica {
-
+Nem sempre executamos nossos programas **Java pela IDE** — afinal, não faria sentido pedir que os clientes instalem o Eclipse ou VSCode só para rodar um sistema. Com a JVM configurada, é possível criar um executável e distribuir o programa para qualquer sistema operacional.
+Neste caso, vamos aprender a executar um programa Java pelo terminal, como o **MS-DOS** ou o terminal do VSCode, criando uma classe chamada `MinhaClasse.java` com o seguinte código:
+			
+```java			
+public class MinhaClasse{
+	public static void main(String[] args) {
+		System.out.println("Oi, fui executado pelo Terminal");
 }
 ```
+> [!TIP]
+> Observe que nosso projeto Java criado por um IDE, ele terá uma pasta chamada **bin**. É nesta pasta que ficarão os arquivos **.class**, o nosso `bytecode`.
 
-- **Nome de variável**: sempre em letra minúscula, a não ser que seja composta > camelCase.
+![image](https://github.com/user-attachments/assets/7331e8c5-a327-47f1-b9e3-5e261e88b7c5)
 
-```java
-// Ex de variável final:
-    String Br = "Brasil"
-    double PI = 3.14
-    int ESTADOS_BRASILEIRO = 27
-    int ANO_2000 = 2000
-```
-> [!IMPORTANT]
-> **Para declarar uma variável nós podemos utilizar caracteres, números e símbolos, porém devemos seguir algumas regras da linguagem**.
+Mesmo usando uma IDE, nós sempre precisaremos identificar aonde se encontram as classes do nosso projeto, no meu caso está em: **C:\estudos\dio-trilha-java-basico\java-terminal**.
 
-- Deve conter apenas letras, _ (underline), $ ou os números de 0 a 9;
-- Deve obrigatoriamente se iniciar por uma letra (preferencialmente), _ ou $, jamais com número;
-- Deve iniciar com uma letra minúscula (boa prática – ver abaixo);
-- Não pode conter espaços;
-- Não podemos usar palavras-chave da linguagem;
-- O nome deve ser único dentro de um escopo
+![image](https://github.com/user-attachments/assets/ba184e41-e12c-4ee1-84df-b4052f7503f1)
 
-```java
-// Declação inválida de variáveis
+## Terminal
 
-int numero&um = 1; //Os únicos símbolos permitidos são _ e $
-int 1numero = 1;    //Uma variável não pode começar com númerico
-int numero um = 1; //Não pode ter espaço no nome da variável
-int long = 1; //long faz parte das palavras reservadas da linguagem
- 
-// Declaração válida de veriáveis
+Vamos ilustrar como executar uma classe, depois de compilada, sem precisar usar a IDE.
 
-int numero$um = 1;
-int numero1 = 1;
-int numeroum = 1;
-int longo = 1;
-```
+- Abra o MS-DOS ou Power Shell
 
-- ***Declarar uma variável em Java segue sempre a seguinte estrutura***:
+- Localize o diretório do seu projeto: **`cd C:\estudos\dio-trilha-java-basico\java-terminal`**
 
-```java
-// Estrutura
+- Acesse a pasta **** bin: **`cd bin`**
 
-Tipo NomeBemDefinido = Atribuição (opcional em alguns casos)
+- Agora digite o comando: **`java MinhaClasse`** (nome da sua classe sem a extensão **.class**)
 
-// Exemplo
+  ![image](https://github.com/user-attachments/assets/8520b4d9-2578-466e-8dae-29d099740f9e)
 
-int idade = 23;
-double altura = 1.62;
-Dog spike; //observe que aqui a variável spike não tem valor, é normal
+## Argumentos
 
-// ex2
-public class MinhaClasse {
-				    
-	public static void main (String [] args) {
-				
-		String meuNome = "Beatriz";				
-		int anoFarbicacao = 2022;				
-		boolean verdadeira = true;				
-		anoFarbicacao = 2018;
-	}
+Ao executarmos uma classe que possui o método `main`, podemos passar argumentos por meio de um array de Strings (`String[] args`). Esses parâmetros são fornecidos diretamente na linha de comando, após o nome da classe a ser executada.
+
+**Exemplo**:
+```java			
+java MinhaClasse argumento1 argumento2
+```				
+Dentro do código, esses valores podem ser acessados pelo array `args`, como em `args[0]`, `args[1]`, etc. Isso permite personalizar a execução do programa conforme os dados fornecidos.
+```java	
+public class AboutMe {
+    public static void main(String[] args) {
+        //os argumentos começam com indice 0
+        String nome = args [0];
+        String sobrenome = args [1];
+        int idade = Integer.valueOf(args[2]); //vamos falar sobre Wrappers
+        double altura = Double.valueOf(args[3]);
+
+        System.out.println("Ola, me chamo " + nome + " " + sobrenome);
+        System.out.println("Tenho " + idade + " anos ");
+        System.out.println("Minha altura é " + altura + "cm ");
+    }
 }
 ```
+**Passando valores aos argumentos pelo VsCode**
 
-## Java Beans
+![image](https://github.com/user-attachments/assets/031ccde8-e4d3-41a6-aaf0-cdfedf531138)
+![image](https://github.com/user-attachments/assets/521f6d50-39df-4180-941a-f3a2a16cac39)
 
-A linguagem Java sugere, através de convenções, formas de escrita universal para nossas classes, atributos, métodos e pacotes.
+**Executando o programa agora no terminal**
+```
+cd C:\estudos\dio-trilha-java-basico\java-terminal
+cd bin
 
-### Variáveis
-
-Mais cedo já aprendemos algumas regras de declaração de variáveis, mas agora iremos conhecer algumas sugestões de de nomenclatura:
-
-- Uma variável deve ser clara, sem abreviações ou definição sem sentido;
-- Uma variável é sempre no singular, **exceto quando se referir a um array ou coleção**.
-- Defina um idioma único para suas variáveis. Se você for declarar variáveis em inglês, defina todas em inglês.
-
-#### Não recomendado
-
-```java
-double salMedio = 1500.23  //variável abreviada, o que dificulta a compreensão
-String emails = "aluno@escola.com" //confuso se a variável seria um array ou único e-mail
-String myName = "JOSEPH" //se idioma pt-BR, o valor poder ser de outro idioma mas o nome da variável não 
+java AboutMe GLEYSON SAMPAIO 28 1.58
 ```
 
-#### Recomendado
-
+## Scanner
 ```java
-double salarioMedio=1500.23;
-String email ="aluno@escola.com";
-String [] emails = {"aluno@escola.com","professor@escola.com"}
-String meuNome = "JOSEPH" 
-```
+import java.util.Locale;
+import java.util.Scanner;
 
-### Métodos
+public class AboutMe {
+    public static void main(String[] args) {
+        //criando o objeto scanner
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        
+        System.out.println("Digite seu nome");
+        String nome = scanner.next();
+        
+        System.out.println("Digite seu sobrenome");
+        String sobrenome = scanner.next();
 
-Os métodos deverão ser nomeados como verbos, através de uma mistura de letras minúsculas e maiúsculas. Em princípio todas as letras que compõem o nome devem ser mantidas em minúsculo, com exceção da primeira letra de cada palavra composta a partir da segunda palavra.
+        System.out.println("Digite sua idade");
+        int idade = scanner.nextInt();
+        
+        System.out.println("Digite sua altura");
+        double altura = scanner.nextDouble();
 
-```java
-somar(int n1, int n2){}
-abrirConexao(){}
-concluirProcessamento() {}
-findById(int id){} // não se assuste, você verá muito método em inglês em sua jornada
-calcularImprimir(){} // há algo de errado neste método, ele deveria ter uma única finalidade
-```
-
-```java
-//EX
-public class MinhaClasse {
-				    
-	public static void main (String [] args) {
-				       
-		String primeiroNome = "Beatriz";
-		String segundoNome = "Bernardes";
-		String nomeCompleto = nomeCompleto(primeiroNome, segundoNome);
-			 System.out.println(nomeCompleto);
-	}
-	public static String nomeCompleto (String primeiroNome, String segundoNome){
-				   
-	return "Resultado do Método: " + primeiroNome.concat(" ").concat(segundoNome);
-	}
+        
+        //imprimindo os dados obtidos pelo usuario
+        System.out.println("Ola, me chamo " + nome + " " + sobrenome);
+        System.out.println("Tenho " + idade + " anos ");
+        System.out.println("Minha altura é " + altura + "cm ");        
+    }
 }
 ```
-
-#### Características dos métodos 
-
-- São funções definidas em uma **classe**;
-- Descrevem os comportamentos ou as ações que os objetos da classe podem executar;
-- Podem manipular dados de objetos, executar operações e retornar resultados;
-- São executados somente quando são chamados;
-- Cada método tem seu nome;
-- Você pode passar dados para um método por meio de parâmetros;
-
-##### Como chamar um método 
-- Use o nome do método seguido por *parênteses* para chamá-lo;
-- Por exemplo, chamamos o método cumprimentar() dentro do método main();
-
-##### Tipos de métodos
-- Métodos sem retorno, identificados com a palavra-chave `void`; 
-- Métodos `protected`, que podem ser chamados por todas as classes que compõe um `package`; 
-- Métodos `friendly`, que podem ser usados dentro da classe que o contém, assim como dentro de qualquer classe que tenha sido derivada dessa classe;
-
+![image](https://github.com/user-attachments/assets/35edae5b-b006-45b1-a9bb-e70c8f2dfa61)
