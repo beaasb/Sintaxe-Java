@@ -52,7 +52,7 @@ Aulas sobre [Sintaxe Java Básico](https://felipe-aguiar.gitbook.io/dio-java/git
       <td>04</td>
       <td>Escopo</td>
       <td align="center">
-        <a href="">
+        <a href="https://github.com/beaasb/Sintaxe-Java/tree/main/escopo">
            <img align="center" alt="Material de Apoio" src="https://img.shields.io/badge/Ver%20Material-30A3DC?style=for-the-badge">
         </a>
       </td>    
@@ -61,7 +61,7 @@ Aulas sobre [Sintaxe Java Básico](https://felipe-aguiar.gitbook.io/dio-java/git
       <td>05</td>
       <td>Palavras Reservadas</td>
       <td align="center">
-        <a href="">
+        <a href="https://github.com/beaasb/Sintaxe-Java/tree/main/palavras-reservadas">
            <img align="center" alt="Material de Apoio" src="https://img.shields.io/badge/Ver%20Material-E94D5F?style=for-the-badge">
         </a>
       </td>    
@@ -70,7 +70,7 @@ Aulas sobre [Sintaxe Java Básico](https://felipe-aguiar.gitbook.io/dio-java/git
       <td>06</td>
       <td>Java Doc</td>
       <td align="center">
-        <a href="">
+        <a href="https://github.com/beaasb/Sintaxe-Java/tree/main/java-doc">
            <img align="center" alt="Material de Apoio" src="https://img.shields.io/badge/Ver%20Material-30A3DC?style=for-the-badge">
         </a>
       </td>    
