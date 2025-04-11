@@ -79,7 +79,7 @@ Aulas sobre [Sintaxe Java Básico](https://felipe-aguiar.gitbook.io/dio-java/git
       <td>07</td>
       <td>Terminal e Argumentos</td>
       <td align="center">
-        <a href="">
+        <a href="https://github.com/beaasb/Sintaxe-Java/tree/main/terminal-argumentos">
            <img align="center" alt="Material de Apoio" src="https://img.shields.io/badge/Ver%20Material-E94D5F?style=for-the-badge">
         </a>
       </td>    
