@@ -75,4 +75,6 @@ return ...;
   private void metodoPrivado(){}
 ```
 ## Exemplo SmartTV
-[CODE]()
+[CODE SMARTTV](https://github.com/beaasb/Sintaxe-Java/blob/main/metodos/src/SmartTv.java)
+[CODE USUARIO](https://github.com/beaasb/Sintaxe-Java/blob/main/metodos/src/Usuario.java)
+
